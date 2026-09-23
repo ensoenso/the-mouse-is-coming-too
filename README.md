@@ -121,9 +121,6 @@ The normal client:
 - Reads device display names and model identifiers only in memory
 - Modifies no Logitech files, databases, firmware, or socket permissions
 
-The source intentionally exposes no general-purpose raw request command. See
-[SECURITY.md](SECURITY.md) for reporting and trust-model details.
-
 ## Build and test
 
 ```sh
