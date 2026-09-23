@@ -1,16 +1,13 @@
 # The Mouse Is Coming Too
 
-**Switch compatible Logitech Easy-Switch keyboards and mice together on macOS.**
+**Switch legacy Logitech Easy-Switch keyboards and mice together on macOS.**
 
 One action sends two supported devices to the same Easy-Switch host. It is a
-small, local alternative for mixed-generation setups that do not qualify for
-Logitech's native Enhanced Easy-Switch—including the tested combination of an
+small, local alternative for setups that do not qualify for Logitech's 
+native Enhanced Easy-Switch—including the tested combination of an
 MX Keys S and the original 2015 MX Master.
 
-> Retirement request denied.
-
-This independent project is not affiliated with, sponsored by, or endorsed by
-Logitech.
+Not affiliated with, sponsored by, or endorsed by Logitech.
 
 ## Download
 
@@ -22,8 +19,7 @@ The archive contains:
 - `Switch to Host 2.app`
 - `Switch to Host 3.app`
 
-Each app contains its own copy of the switching code. It does not refer to the
-repository or the computer on which it was built. See [INSTALL.md](INSTALL.md)
+Each app contains its own copy of the switching code. See [INSTALL.md](INSTALL.md)
 for checksum verification, Gatekeeper, and first-run instructions.
 
 ## What it solves
@@ -74,13 +70,6 @@ Copy the three apps to `/Applications`. In Logi Options+, assign a customizable
 button or key to **Open Application**, then choose the app for the required
 host. Opening an app immediately requests the switch; no window is shown.
 
-You can also enable the included Karabiner-Elements rule to map these physical
-keyboard chords:
-
-- right Option + right Command + 1 → host 1
-- right Option + right Command + 2 → host 2
-- right Option + right Command + 3 → host 3
-
 For switching in both directions, install the launchers on each Mac. Keep a
 physical Easy-Switch control, built-in trackpad, or spare input device available
 during initial testing.
@@ -116,21 +105,21 @@ discovers choices for its two-device Easy-Switch action, and invokes that fixed
 action with a host slot. It does not patch Options+, modify firmware, enable a
 debugger, automate the UI, install a daemon, or open a network connection.
 
-The service events confirm that both commands were emitted; they are not
-hardware acknowledgements. Commands are sequential rather than atomic, so a
-failure can leave only one device switched. The client never retries an
+The service events confirm that both commands were emitteds. 
+Commands are sequential rather than atomic, so a failure can leave 
+only one device switched. The client never retries an
 uncertain execution automatically.
 
 ## Privacy and security
 
 The normal client:
 
-- opens no network connection or listener
-- collects and transmits no telemetry
-- stores no device, account, or usage data
-- needs no administrator, Accessibility, Automation, or debug permission
-- reads device display names and model identifiers only in memory
-- modifies no Logitech files, databases, firmware, or socket permissions
+- No network connection or listener
+- No telemetry
+- No device, account, or usage data
+- Needs no administrator, Accessibility, Automation, or debug permission
+- Reads device display names and model identifiers only in memory
+- Modifies no Logitech files, databases, firmware, or socket permissions
 
 The source intentionally exposes no general-purpose raw request command. See
 [SECURITY.md](SECURITY.md) for reporting and trust-model details.
@@ -158,7 +147,3 @@ ad-hoc signatures, and writes a ZIP plus SHA-256 checksum under `dist/`.
 ## License and trademarks
 
 MIT. See [LICENSE](LICENSE).
-
-Logitech, Logi, and their logos are trademarks or registered trademarks of
-Logitech Europe S.A. and/or its affiliates in the United States and/or other
-countries. All other trademarks are the property of their respective owners.
