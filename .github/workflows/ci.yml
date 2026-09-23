@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+      - name: Test
+        run: python -m unittest -v
+      - name: Audit publishable files
+        run: zsh tools/audit-public.sh
+      - name: Build app archive
+        run: zsh tools/package-release.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: macos-launchers
+          path: |
+            dist/*.zip
+            dist/SHA256SUMS

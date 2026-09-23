@@ -1,0 +1,43 @@
+{
+  "title": "The Mouse Is Coming Too",
+  "rules": [
+    {
+      "description": "Right Option + Right Command + 1/2/3 switches two Easy-Switch devices together",
+      "manipulators": [
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "1",
+            "modifiers": {
+              "mandatory": ["right_option", "right_command"],
+              "optional": ["caps_lock"]
+            }
+          },
+          "to": [{"shell_command": "/usr/bin/open -gja '/Applications/Switch to Host 1.app'"}]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "2",
+            "modifiers": {
+              "mandatory": ["right_option", "right_command"],
+              "optional": ["caps_lock"]
+            }
+          },
+          "to": [{"shell_command": "/usr/bin/open -gja '/Applications/Switch to Host 2.app'"}]
+        },
+        {
+          "type": "basic",
+          "from": {
+            "key_code": "3",
+            "modifiers": {
+              "mandatory": ["right_option", "right_command"],
+              "optional": ["caps_lock"]
+            }
+          },
+          "to": [{"shell_command": "/usr/bin/open -gja '/Applications/Switch to Host 3.app'"}]
+        }
+      ]
+    }
+  ]
+}
